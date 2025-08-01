@@ -1,0 +1,167 @@
+.leaderboard-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.leaderboard-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #495057;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  font-weight: 600;
+  transition: all 0.2s ease; /* Animation property */
+}
+
+/* --- HOVER ANIMATION --- */
+.back-link:hover {
+  background-color: #f1f3f5;
+  transform: translateY(-2px);
+}
+
+.leaderboard-title h1 {
+  margin: 0;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #845ef7 0%, #2b8a3e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* stylelint-disable-next-line property-no-unknown */
+  -webkit-text-fill-color: transparent;
+  /* stylelint-disable-next-line property-no-unknown */
+  text-fill-color: transparent;
+}
+.leaderboard-title p {
+  margin: 0;
+  color: #6c757d;
+}
+
+/* Podium Section */
+.podium-section {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.podium-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid;
+  position: relative;
+  transition: transform 0.2s ease; /* Animation property */
+}
+
+/* --- HOVER ANIMATION --- */
+.podium-card:hover {
+  transform: translateY(-5px);
+}
+
+.podium-card h2 { margin: 1rem 0 0.5rem; font-size: 1.25rem; color: #212529; }
+.podium-icon { font-size: 2.5rem; }
+.podium-amount { font-size: 2rem; font-weight: 700; margin: 0; color: #212529; }
+.podium-rank {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Podium Colors */
+.podium-card.rank-1 { background-color: #fff9db; border-color: #fcc419; color: #fcc419; transform: scale(1.05); }
+.podium-card.rank-1 .podium-rank { background-color: #fcc419; color: #495057; }
+
+.podium-card.rank-2 { background-color: #f1f3f5; border-color: #adb5bd; color: #adb5bd; }
+.podium-card.rank-2 .podium-rank { background-color: #adb5bd; color: #fff; }
+
+.podium-card.rank-3 { background-color: #fbeee5; border-color: #e67700; color: #e67700; }
+.podium-card.rank-3 .podium-rank { background-color: #e67700; color: #fff; }
+
+/* Full Rankings Section */
+.full-rankings {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.full-rankings h2 { margin-top: 0; color: #212529; }
+.full-rankings ul { list-style: none; padding: 0; margin: 0; }
+
+.rank-item {
+  display: grid;
+  grid-template-columns: 80px 3fr 2fr 1.5fr;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease; /* Animation property */
+  border-bottom: 1px solid #f1f3f5;
+}
+.rank-item:last-child {
+  border-bottom: none;
+}
+
+/* --- HOVER ANIMATION --- */
+.rank-item:hover {
+  background-color: #f8f9fa;
+}
+
+.rank-item.user-highlight {
+  background-color: #f3f0ff;
+  border-left: 4px solid #845ef7;
+}
+.rank-position { 
+  font-weight: 700; 
+  font-size: 1.1rem; 
+  color: #868e96; 
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.rank-name {
+  font-weight: 600;
+  color: #212529;
+}
+.user-tag {
+  background: #845ef7;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+.rank-status { display: flex; align-items: center; gap: 0.5rem; color: #868e96; font-size: 0.9rem; }
+.status-up { color: #2b8a3e; }
+.status-down { color: #c92a2a; }
+.rank-amount { 
+  font-weight: 700; 
+  text-align: right; 
+  font-size: 1.1rem;
+  color: #845ef7;
+}
+.rank-amount small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #adb5bd;
+}
+
+/* Medal Icon Colors */
+.medal-gold { color: #fcc419; }
+.medal-silver { color: #adb5bd; }
+.medal-bronze { color: #e67700; }

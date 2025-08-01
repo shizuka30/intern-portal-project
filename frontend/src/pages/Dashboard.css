@@ -1,0 +1,189 @@
+/* --- Dashboard General Layout --- */
+.dashboard-container {
+  background-color: #f7f8fc;
+  min-height: 100vh;
+  padding: 2rem 3rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* --- Header --- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* stylelint-disable-next-line property-no-unknown */
+  -webkit-text-fill-color: transparent;
+  /* stylelint-disable-next-line property-no-unknown */
+  text-fill-color: transparent;
+}
+
+.header-title p { margin: 4px 0 0 0; color: #6c757d; }
+.header-nav { display: flex; gap: 1rem; }
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #e9ecef;
+  background-color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.nav-link:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.nav-link.logout { color: #e03131; }
+
+/* --- Main Grid Layout --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  /* --- THIS IS THE KEY LAYOUT FIX --- */
+  grid-template-areas:
+    "stat1 stat2 stat3 stat4"
+    "referral referral rewards rewards"
+    "recent recent rewards rewards";
+}
+
+/* --- Stat Cards (Top Row) --- */
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+.stat-card.color-green { border-color: #20c997; }
+.stat-card.color-purple { border-color: #be4bdb; }
+.stat-card.color-yellow { border-color: #fcc419; }
+.stat-card.color-blue { border-color: #339af0; }
+
+.stat-icon { font-size: 1.5rem; color: #adb5bd; }
+.stat-card h2 {
+  font-size: 1rem;
+  color: #495057;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+.stat-value { font-size: 2.25rem; font-weight: 700; color: #212529; margin: 0; }
+.stat-change { font-size: 0.875rem; color: #adb5bd; margin-top: 0.25rem; }
+
+/* --- General Card Style for lower section --- */
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+.card h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #343a40;
+}
+.card-title-icon { color: #845ef7; }
+
+/* --- Grid Area Assignments --- */
+.referral-card { grid-area: referral; }
+.recent-card { grid-area: recent; }
+.rewards-card { grid-area: rewards; }
+
+.referral-card p { color: #6c757d; font-size: 0.9rem; line-height: 1.5; }
+.referral-box {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #f3f0ff; padding: 0.75rem 1rem; border-radius: 8px;
+  margin-top: 1rem; border: 1px dashed #d0bfff;
+}
+.referral-box span { font-family: 'Courier New', monospace; font-weight: bold; font-size: 1.1rem; color: #7048e8; }
+.copy-btn {
+  display: flex; align-items: center; gap: 0.5rem; border: none; background: #e5dbff;
+  padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-weight: 600; color: #7048e8;
+}
+.copy-btn:hover { background: #d0bfff; }
+
+.recent-card ul { list-style: none; padding: 0; margin: 0; }
+.activity-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.85rem 0; border-bottom: 1px solid #f1f3f5;
+}
+.activity-item:last-child { border: none; }
+.activity-info strong {
+    display: block;
+    font-weight: 500;
+    color: #343a40;
+}
+.activity-info .activity-time {
+    font-size: 0.8rem;
+    color: #868e96;
+}
+.activity-details {
+    text-align: right;
+    color: #495057;
+}
+.activity-amount {
+  font-weight: 600; background-color: #e5dbff; color: #7048e8;
+  padding: 4px 8px; border-radius: 6px; margin-left: 8px;
+}
+
+.next-reward-progress { margin-bottom: 1.5rem; }
+.progress-text { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+.progress-text strong { font-weight: 600; }
+.progress-text span { font-size: 0.9rem; color: #6c757d; }
+.progress-bar-container { width: 100%; background: #e9ecef; border-radius: 99px; height: 8px; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, #845ef7 0%, #a56eff 100%); border-radius: 99px; }
+.next-reward-progress p { font-size: 0.85rem; color: #adb5bd; margin-top: 0.5rem; }
+
+.rewards-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.reward-item {
+  display: grid; grid-template-columns: 30px 1fr auto; align-items: center; gap: 1rem;
+  padding: 0.75rem; border-radius: 8px;
+}
+.reward-item.unlocked { background: #d3f9d8; }
+.reward-item.locked { background: #f1f3f5; }
+
+.reward-icon { font-size: 1.25rem; }
+.reward-item.unlocked .reward-icon { color: #2b8a3e; }
+.reward-item.locked .reward-icon { color: #adb5bd; }
+
+.reward-details strong { display: block; font-weight: 500; color: #343a40; }
+.reward-details span { font-size: 0.8rem; color: #868e96; }
+.reward-goal { font-size: 0.85rem; font-weight: 500; color: #adb5bd; }
+.reward-item.unlocked .reward-goal { color: #2b8a3e; }
